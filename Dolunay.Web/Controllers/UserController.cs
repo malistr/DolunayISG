@@ -57,5 +57,10 @@ namespace Dolunay.Web.Controllers
             }
 
         }
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
+        }
     }
 }
